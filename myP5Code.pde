@@ -3,8 +3,9 @@ setup = function(){
     size(400, 400); 
 };
 
-var theNumber = 100;
-
+var theNumber = 0;
+var boxY = 60; 
+//var boxFill = noFill();
 //draw Function - will run repeatedly
 draw = function() {
   background(255,255,255,200);
@@ -18,8 +19,15 @@ draw = function() {
   text("It's zero", 10, 190);
 
   noFill();
-  rect(5, 60, 200, 40); 
+  rect(5, boxY, 200, 40); 
+
+  if(theNumber > 0){boxY = 60};
+ // if(theNumber > 0){boxFill(36, 156, 12, 100)}
+  if(theNumber < 0){boxY = 110};
+  if(theNumber == 0){boxY = 160}
 };
+
+
 
 //draw Function - will run when mouseClicked
 mouseClicked = function(){
